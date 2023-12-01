@@ -6,6 +6,8 @@ import dbus.mainloop.glib
 import faulthandler
 from functools import partial
 import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/ext/velib_python')
 import pymodbus.constants
 from settingsdevice import SettingsDevice
 import signal
@@ -22,13 +24,7 @@ from scan import *
 from utils import *
 import watchdog
 
-import carlo_gavazzi
-import dse
-import ev_charger
-import smappee
-import abb
-import comap
-import victron_em
+import shelly
 
 import logging
 log = logging.getLogger()
@@ -265,7 +261,7 @@ class NetClient(Client):
     def init_settings(self):
         super().init_settings()
 
-        svcname = 'com.victronenergy.modbusclient.%s' % self.name
+        svcname = 'com.victronenergy.modbusshelly.%s' % self.name
         self.svc = VeDbusService(svcname, self.dbusconn)
         self.svc.add_path('/Scan', False, writeable=True,
                           onchangecallback=self.set_scan)
