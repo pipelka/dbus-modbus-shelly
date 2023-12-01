@@ -6,8 +6,6 @@ import dbus.mainloop.glib
 import faulthandler
 from functools import partial
 import os
-import sys
-sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/ext/velib_python')
 import pymodbus.constants
 from settingsdevice import SettingsDevice
 import signal
