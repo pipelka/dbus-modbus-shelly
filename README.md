@@ -18,6 +18,7 @@ cd dbus-modbus-shelly
 
 **_Note:_** you need to install the `git` utility on your device to be able to clone the repository:
 ```
+opkg update
 opkg install git
 ```
 
