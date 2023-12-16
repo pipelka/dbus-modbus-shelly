@@ -59,6 +59,7 @@ class ShellyEnergyMeterPro3EM(device.CustomName, ShellyEnergyMeter):
     productid = 0xB00D
     productname = 'Shelly Pro 3EM'
     nr_phases = 3
+    age_limit_fast = 0.5
 
     fast_regs = (
         '/Ac/L1/Power',
