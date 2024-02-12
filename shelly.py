@@ -101,18 +101,6 @@ class ShellyEnergyMeterPro3EM(device.CustomName, ShellyEnergyMeter):
             [
                 Reg_f32l(1162, '/Ac/Energy/Forward', 1000, '%.1f kWh'),
                 Reg_f32l(1164, '/Ac/Energy/Reverse', 1000, '%.1f kWh')
-            ],
-            [
-                Reg_f32l(1182, '/Ac/L1/Energy/Forward', 1000, '%.1f kWh'),
-                Reg_f32l(1184, '/Ac/L1/Energy/Reverse', 1000, '%.1f kWh')
-            ],
-            [
-                Reg_f32l(1202, '/Ac/L2/Energy/Forward', 1000, '%.1f kWh'),
-                Reg_f32l(1204, '/Ac/L2/Energy/Reverse', 1000, '%.1f kWh')
-            ],
-            [
-                Reg_f32l(1222, '/Ac/L3/Energy/Forward', 1000, '%.1f kWh'),
-                Reg_f32l(1224, '/Ac/L3/Energy/Reverse', 1000, '%.1f kWh')
             ]
         ]
 
