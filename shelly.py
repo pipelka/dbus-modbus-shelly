@@ -25,7 +25,7 @@ class ShellyEnergyMeter(device.EnergyMeter):
     def read_data_regs(self, regs, d):
         now = time.time()
 
-        if all(now - r.time < r.max_age for r in regs):
+        if all((now - r.time < r.max_age) and (now >= r.time) for r in regs):
             return
 
         start = regs[0].base
@@ -49,6 +49,9 @@ class ShellyEnergyMeter(device.EnergyMeter):
                     if reg.name:
                         d[reg.name] = copy(reg) if reg.isvalid() else None
             reg.time = now
+
+        if latency < 0:
+            return 0
 
         return latency
 
